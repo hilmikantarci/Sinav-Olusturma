@@ -22,7 +22,7 @@ namespace sinavolusturma.Controllers
 
             int titlebaslangic = gelen1.IndexOf("<title>") + 7;
 
-            int titlebitis = gelen1.Substring(titlebaslangic).IndexOf("</title>");<xzxz<xz<
+            int titlebitis = gelen1.Substring(titlebaslangic).IndexOf("</title>");
 
             return View();
         }
