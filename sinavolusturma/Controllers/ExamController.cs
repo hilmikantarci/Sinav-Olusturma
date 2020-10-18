@@ -16,22 +16,53 @@ namespace sinavolusturma.Controllers
     [Route("exam")]
     public class ExamController : Controller
     {
-        [Route("")]
-        [Route("~/")]
         [Route("index")]
         public IActionResult Index()
         {
+            return View();
+        }
+        [HttpGet]
+        [Route("add")]
+        public IActionResult Add()
+        {
+            return View("Add", new question());
+        }
+        [HttpPost]
+        [Route("add")]
+        public IActionResult Add(question question)
+        {
 
+            db.questions.Add(question);
+            db.SaveChanges();
+            return RedirectToAction("");
+        }
+        [HttpGet]
+        [Route("delete/{id}")]
+        public IActionResult Delete(int id)
+        {
+
+            db.questions.Remove(db.questions.Find(id));
+            db.SaveChanges();
+            return RedirectToAction("list");
+        }
+
+        [Route("")]
+        [Route("~/")]
+        
+        public IActionResult list()
+        {
+            ViewBag.questions = db.questions.ToList();
 
             return View();
-
-
         }
+
         private DatabaseContext db;
+        private DatabaseContext db2;
 
         public ExamController(DatabaseContext _db)
         {
             db = _db;
+            db2 = _db;
         }
 
 

@@ -1,165 +1,167 @@
-﻿
+﻿@model sinavolusturma.Entities.question
 @{
     ViewData["Title"] = "Index";
 }
 <body>
-    <form method="post" asp-controller="exam" asp-action="add" >
+    <form method="post" asp-controller="exam" asp-action="add">
         <div>
 
-            <select id="Select0">
+            <select id="Select0" style="width:1000px" asp-for="baslik" >
                 <option value="baslik1">baslik1</option>
                 <option value="baslik2">baslik2</option>
                 <option value="baslik3">baslik3</option>
                 <option value="baslik4">baslik4</option>
-            </select>           
-            
+            </select>
+            <br />
+            <tr>
+                <textarea id="metin" rows="10" cols="120"></textarea>
+            </tr>
+            <br />
 
-            <table style="width:100%;" cellpadding="15" cellspacing="15">
+            <table style="width:100%;" cellpadding="10">
                 <tr>
                     1)
-                    <input id="Text10" type="text" style="width:1000px" />
+                    <input id="Text10" type="text" style="width:1000px" asp-for="birSoru" />
+                </tr>
+                <tr>
+                    <td>
+                        A)<input id="Text11" type="text" style="width:400px" asp-for="birA" />
+                    </td>
+                    <td>
+                        B)<input id="Text12" type="text" style="width:400px" asp-for="birB" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        C)<input id="Text13" type="text" style="width:400px" asp-for="birC" />
+                    </td>
+                    <td>
+                        D)<input id="Text14" type="text" style="width:400px" asp-for="birD" />
+                    </td>
+                </tr>
+            </table>
+            Doğru Cevap:
+            <select id="Select1" asp-for="birDogru">
+
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+
+            <br />
+
+
+            <table style="width:100%;" cellpadding="10">
+                <tr>
+                    2)
+                    <input id="Text20" type="text" style="width:1000px" asp-for="ikiSoru" />
                 </tr>
 
-
-                <table style="width:100%;" cellpadding="10">
-                    <tr>
-                        1)
-                        <input id="Text10" type="text" style="width:1000px" />
-                    </tr>
-                    <tr>
-                        <td>
-                            A)<input id="Text11" type="text" style="width:400px" />
-                        </td>
-                        <td>
-                            B)<input id="Text12" type="text" style="width:400px" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            C)<input id="Text13" type="text" style="width:400px" />
-                        </td>
-                        <td>
-                            D)<input id="Text14" type="text" style="width:400px" />
-                        </td>
-                    </tr>
-                </table>
-                Doğru Cevap:
-                <select id="Select1">
-                   
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                </select>
-
-                <br />
-
-
-                <table style="width:100%;" cellpadding="10">
-                    <tr>
-                        2)
-                        <input id="Text20" type="text" style="width:1000px" />
-                    </tr>
-
-                    <tr>
-                        <td>
-                            A)<input id="Text21" type="text" style="width:400px" />
-                        </td>
-                        <td>
-                            B)<input id="Text22" type="text" style="width:400px" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            C)<input id="Text23" type="text" style="width:400px" />
-                        </td>
-                        <td>
-                            D)<input id="Text24" type="text" style="width:400px" />
-                        </td>
-                    </tr>
-                </table>
-                Doğru Cevap:
-                <select id="Select2">
-                    
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                </select>
-
-                <br />
-
-
-                <table style="width:100%;" cellpadding="10">
-                    <tr>
-                        3)
-                        <input id="Text30" type="text" style="width:1000px" />
-                    </tr>
-                    <tr>
-                        <td>
-                            A)<input id="Text31" type="text" style="width:400px" />
-                        </td>
-                        <td>
-                            B)<input id="Text32" type="text" style="width:400px" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            C)<input id="Text33" type="text" style="width:400px" />
-                        </td>
-                        <td>
-                            D)<input id="Text34" type="text" style="width:400px" />
-                        </td>
-                    </tr>
-                </table>
-                Doğru Cevap:
-                <select id="Select3">
-                    
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                </select>
-
-                <br />
-
-
-                <table style="width:100%;" cellpadding="10">
-
-                    4)
-                    <input id="Text40" type="text" style="width:1000px" />
-
-                    <tr>
-                        <td>
-                            A)<input id="Text41" type="text" style="width:400px" />
-                        </td>
-                        <td>
-                            B)<input id="Text42" type="text" style="width:400px" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            C)<input id="Text43" type="text" style="width:400px" />
-                        </td>
-                        <td>
-                            D)<input id="Text44" type="text" style="width:400px" />
-                        </td>
-                    </tr>
-                </table>
-                Doğru Cevap:
-                <select id="Select4">
-                    
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                </select>
+                <tr>
+                    <td>
+                        A)<input id="Text21" type="text" style="width:400px" asp-for="ikiA" />
+                    </td>
+                    <td>
+                        B)<input id="Text22" type="text" style="width:400px" asp-for="ikiB" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        C)<input id="Text23" type="text" style="width:400px" asp-for="ikiC" />
+                    </td>
+                    <td>
+                        D)<input id="Text24" type="text" style="width:400px" asp-for="ikiD" />
+                    </td>
+                </tr>
             </table>
+            Doğru Cevap:
+            <select id="Select2" asp-for="ikiDogru">
 
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+
+            <br />
+
+
+            <table style="width:100%;" cellpadding="10">
+                <tr>
+                    3)
+                    <input id="Text30" type="text" style="width:1000px" asp-for="ucSoru" />
+                </tr>
+                <tr>
+                    <td>
+                        A)<input id="Text31" type="text" style="width:400px" asp-for="ucA" />
+                    </td>
+                    <td>
+                        B)<input id="Text32" type="text" style="width:400px" asp-for="ucB" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        C)<input id="Text33" type="text" style="width:400px" asp-for="ucC" />
+                    </td>
+                    <td>
+                        D)<input id="Text34" type="text" style="width:400px" asp-for="ucD" />
+                    </td>
+                </tr>
+            </table>
+            Doğru Cevap:
+            <select id="Select3" asp-for="ucDogru">
+
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+
+            <br />
+
+
+            <table style="width:100%;" cellpadding="10">
+
+                4)
+                <input id="Text40" type="text" style="width:1000px" asp-for="dortSoru" />
+
+                <tr>
+                    <td>
+                        A)<input id="Text41" type="text" style="width:400px" asp-for="dortA" />
+                    </td>
+                    <td>
+                        B)<input id="Text42" type="text" style="width:400px" asp-for="dortB" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        C)<input id="Text43" type="text" style="width:400px" asp-for="dortC" />
+                    </td>
+                    <td>
+                        D)<input id="Text44" type="text" style="width:400px" asp-for="dortD" />
+                    </td>
+                </tr>
+            </table>
+            Doğru Cevap:
+            <select id="Select4" asp-for="dortDogru">
+
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+            </table>
+            <br />
+            <br />
+            <input id="date"  value="@DateTime.Now"type="datetime"asp-for="tarih"  readonly  />
+            <td>
+                <input type="submit" value="Sınav Oluştur." />
+            </td>
 
             <br />
             <br />
-            <textarea id="TextArea1" rows="1" cols="1"></textarea>
+
             <br />
         </div>
     </form>

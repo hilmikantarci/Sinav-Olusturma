@@ -15,12 +15,12 @@ namespace sinavolusturma.Controllers
         public UserController(DatabaseContext _db)
         {
             db = _db;
+
         }
 
         public IActionResult Index()
         {
-            ViewBag.users = db.Users.ToList();
-            
+            ViewBag.users = db.Users.ToList();      
             
 
             return View();

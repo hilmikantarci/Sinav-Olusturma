@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace sinavolusturma.Entities
 {
-    [Table("user")]
+    [Table("question")]
     public class question
     {
         [Key]
         public int Id { get; set; }
         public string baslik { get; set; }
+        public string metin { get; set; }
         public string birSoru{ get; set; }
         public string birA { get; set; }
         public string birB { get; set; }
@@ -37,6 +38,7 @@ namespace sinavolusturma.Entities
         public string dortC { get; set; }
         public string dortD { get; set; }
         public string dortDogru { get; set; }
+        public string tarih { get; set; }
 
 
     }

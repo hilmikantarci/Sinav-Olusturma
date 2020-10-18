@@ -12,8 +12,7 @@ namespace sinavolusturma.Entities
         {
 
         }
-        public DatabaseContext(DbContextOptions<DatabaseContext> options)
-            : base(options)
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
 
         }

@@ -1,0 +1,38 @@
+﻿
+
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+    </head>
+    <body>
+        <h3>Exam List</h3>
+        <a asp-controller="exam" asp-action="index">Add</a>
+        <table border="1">
+            <tr>
+                <th>Id </th>
+                <th>baslik </th>
+                <th>tarih  </th>
+                
+            </tr>
+            @foreach (var questions in ViewBag.questions)
+            {
+                <tr>
+                    <td>@questions.Id</td>
+                    <td>@questions.baslik</td>
+                    <td>@questions.tarih</td>   
+                    <td>
+                        <a asp-controller="exam" asp-action="delete" asp-route-id="@questions.Id"
+                        onclick="return confirm('Emin misiniz?')">Delete</a>
+                    </td>  
+                    
+
+                </tr>
+
+            }
+        </table>
+    </body>
+    </html>
+
+
