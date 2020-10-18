@@ -17,13 +17,10 @@ namespace sinavolusturma.Controllers
             db = _db;
         }
 
-        [Route("")]
-        [Route("~/")]
-        [Route("index")]
         public IActionResult Index()
         {
             ViewBag.users = db.Users.ToList();
-            var model = new User();
+            
             
 
             return View();

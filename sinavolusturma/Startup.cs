@@ -50,7 +50,7 @@ namespace sinavolusturma
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=User}/{action=Index}/{id?}");
+                    pattern: "{controller=Exam}/{action=Index}/{id?}");
             });
         }
     }

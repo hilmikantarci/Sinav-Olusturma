@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sinavolusturma.Entities
 {
-    public class DatabaseContext:DbContext
+    public class DatabaseContext : DbContext
     {
         public DatabaseContext()
         {
@@ -18,5 +18,6 @@ namespace sinavolusturma.Entities
 
         }
         public virtual DbSet<User> Users { get; set; }
+        public DbSet<question> questions { get; set; }
     }
 }
