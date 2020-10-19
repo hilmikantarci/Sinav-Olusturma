@@ -16,7 +16,7 @@ namespace sinavolusturma.Entities
         {
 
         }
-        public virtual DbSet<User> Users { get; set; }
+        public  DbSet<User> Users { get; set; }
         public DbSet<question> questions { get; set; }
     }
 }
